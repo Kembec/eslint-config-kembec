@@ -1,0 +1,67 @@
+module.exports = {
+	plugins: ["@typescript-eslint"],
+	rules: {
+		"@typescript-eslint/member-ordering": [
+			"error",
+			{
+				default: [
+					"signature",
+
+					"private-decorated-field",
+					"private-instance-field",
+					"private-static-field",
+					"protected-abstract-field",
+					"protected-decorated-field",
+					"protected-instance-field",
+					"protected-static-field",
+					"public-abstract-field",
+					"public-decorated-field",
+					"public-instance-field",
+					"public-static-field",
+
+					"private-constructor",
+					"protected-constructor",
+					"public-constructor",
+
+					"private-decorated-method",
+					"private-instance-method",
+					"private-static-method",
+					"protected-abstract-method",
+					"protected-decorated-method",
+					"protected-instance-method",
+					"protected-static-method",
+					"public-abstract-method",
+					"public-decorated-method",
+					"public-instance-method",
+					"public-static-method",
+				],
+			},
+		],
+		"@typescript-eslint/no-confusing-non-null-assertion": ["error"],
+		"@typescript-eslint/no-confusing-void-expression": ["error", { ignoreArrowShorthand: true }],
+		"@typescript-eslint/no-explicit-any": ["warn"],
+		"@typescript-eslint/no-extra-non-null-assertion": ["error"],
+		"@typescript-eslint/no-floating-promises": ["error"],
+		"@typescript-eslint/no-non-null-asserted-optional-chain": ["error"],
+		"@typescript-eslint/no-non-null-assertion": ["error"],
+		"@typescript-eslint/no-require-imports": ["error"],
+		"@typescript-eslint/no-unnecessary-boolean-literal-compare": ["error"],
+		"@typescript-eslint/no-unnecessary-condition": ["error"],
+		"@typescript-eslint/no-unused-vars": "off",
+		"@typescript-eslint/no-useless-constructor": ["error"],
+		"@typescript-eslint/prefer-for-of": ["error"],
+		"@typescript-eslint/prefer-nullish-coalescing": ["error"],
+		"@typescript-eslint/prefer-readonly": ["error"],
+		"@typescript-eslint/promise-function-async": ["error", { checkArrowFunctions: false }],
+		"@typescript-eslint/switch-exhaustiveness-check": ["error"],
+		"@typescript-eslint/explicit-member-accessibility": [
+			"error",
+			{
+				accessibility: "explicit",
+				overrides: {
+					constructors: "no-public",
+				},
+			},
+		],
+	},
+};
