@@ -1,6 +1,6 @@
 {
   "name": "@kembec/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "My personal linter configuration for JavaScript/TypeScript",
   "main": "index.js",
   "scripts": {
