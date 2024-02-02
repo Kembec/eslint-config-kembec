@@ -53,6 +53,7 @@ module.exports = {
 		"@typescript-eslint/prefer-nullish-coalescing": ["error"],
 		"@typescript-eslint/prefer-readonly": ["error"],
 		"@typescript-eslint/promise-function-async": ["error", { checkArrowFunctions: false }],
+		"@typescript-eslint/require-await": ["warn"],
 		"@typescript-eslint/switch-exhaustiveness-check": ["error"],
 		"@typescript-eslint/explicit-member-accessibility": [
 			"error",
