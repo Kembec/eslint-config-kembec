@@ -21,6 +21,8 @@ Modify your ESLint configuration file to use this package. The setup varies slig
 ```json
 {
   "extends": ["@kembec/eslint-config"]
+  // Include Jest
+  "extends": ["@kembec/eslint-config/jest"]
 }
 ```
 
@@ -29,6 +31,8 @@ Modify your ESLint configuration file to use this package. The setup varies slig
 ```json
 {
   "extends": ["@kembec/eslint-config/typescript"],
+    // Include Jest
+  "extends": ["@kembec/eslint-config/typescript/jest"]
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],

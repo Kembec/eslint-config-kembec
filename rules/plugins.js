@@ -20,12 +20,4 @@ module.exports = {
 			},
 		],
 	},
-	overrides: [
-		{
-			files: ["*.test.ts", "*.test.js"],
-			plugins: ["jest"],
-			extends: ["plugin:jest/recommended"],
-			rules: {},
-		},
-	],
 };
