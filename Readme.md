@@ -73,4 +73,4 @@ Use `npm run lint` to identify issues or `npm run lint:fix` to fix many issues a
 
 ## License
 
-`Sunat Utils` is licensed under the [AGPL-3.0](https://opensource.org/licenses/AGPL-3.0). Its use, modification, and distribution are allowed under the terms of this license.
+This project is licensed under the [AGPL-3.0](https://opensource.org/licenses/AGPL-3.0). Its use, modification, and distribution are allowed under the terms of this license.
