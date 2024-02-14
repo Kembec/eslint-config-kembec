@@ -1,6 +1,6 @@
 {
   "name": "@kembec/eslint-config",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "My personal linter configuration for JavaScript/TypeScript",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/KembecDev/eslint-config-kembec.git"
+    "url": "git+https://github.com/Kembec/eslint-config-kembec.git"
   },
   "keywords": [
     "javascript",
@@ -23,9 +23,9 @@
   "author": "Kembec.com",
   "license": "AGPL-3.0 license",
   "bugs": {
-    "url": "https://github.com/KembecDev/eslint-config-kembec/issues"
+    "url": "https://github.com/Kembec/eslint-config-kembec/issues"
   },
-  "homepage": "https://github.com/KembecDev/eslint-config-kembec#readme",
+  "homepage": "https://github.com/Kembec/eslint-config-kembec#readme",
   "dependencies": {
     "@babel/core": "^7.23.9",
     "@babel/eslint-parser": "^7.23.10",
