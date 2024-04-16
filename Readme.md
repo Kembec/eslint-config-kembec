@@ -1,6 +1,6 @@
 # Streamlined ESLint Configuration for JS/TS Projects
 
-This document outlines the steps to integrate my ESLint setup into your JavaScript or TypeScript projects. It's a personal collection of configurations and plugins aimed at fostering a consistent coding style and catching common errors.
+This document outlines how to integrate my ESLint setup into your JavaScript or TypeScript projects. It's a personal collection of configurations and plugins designed to enforce a consistent coding style and catch common errors.
 
 ## Quick Start Guide
 
@@ -16,23 +16,19 @@ npm install -D @kembec/eslint-config
 
 Modify your ESLint configuration file to use this package. The setup varies slightly depending on whether you're working with plain JavaScript or TypeScript.
 
-- **For JavaScript Projects**: In your `.eslintrc` (which could be a `.json`, `.js`, or `.ts` file), include the following:
+- **For JavaScript Projects**: In your `.eslintrc` file (which could be `.json`, `.js`, or `.ts`), include the following setup. To use Jest, change the extends value as shown in the comment:
 
 ```json
 {
-  "extends": ["@kembec/eslint-config"]
-  // Include Jest
-  "extends": ["@kembec/eslint-config/jest"]
+  "extends": ["@kembec/eslint-config"] // To use Jest, change to "@kembec/eslint-config/jest"
 }
 ```
 
-- **For TypeScript Projects**: To incorporate TypeScript-specific rules and configure the parser options, use this setup:
+- **For TypeScript Projects**: To include TypeScript-specific rules and configure parser options, use the following setup. To use Jest, modify the extends value as shown in the comment:
 
 ```json
 {
-  "extends": ["@kembec/eslint-config/typescript"],
-    // Include Jest
-  "extends": ["@kembec/eslint-config/typescript/jest"]
+  "extends": ["@kembec/eslint-config/typescript"], // To use Jest, change to "@kembec/eslint-config/typescript/jest"
   "overrides": [
     {
       "files": ["*.ts", "*.tsx"],
@@ -44,7 +40,29 @@ Modify your ESLint configuration file to use this package. The setup varies slig
 }
 ```
 
+- **For React Projects**:
+
+```json
+{
+  "extends": [
+    "@kembec/eslint-config/typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended"
+  ],
+  "ignorePatterns": ["dist", ".eslintrc.cjs", "vite.config.ts"],
+  "overrides": [
+    {
+      "files": ["src/**/*.ts", "src/**/*.tsx"],
+      "parserOptions": {
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ]
+}
+```
+
 ## Included Plugins
+
 
 The configuration incorporates a carefully selected set of ESLint plugins to assist with various code quality and style concerns:
 
