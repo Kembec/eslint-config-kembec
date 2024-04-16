@@ -11,8 +11,6 @@ module.exports = {
 	extends: [
 		"eslint:recommended",
 		"plugin:prettier/recommended",
-		...["./rules/best-practices", "./rules/errors", "./rules/style", "./rules/plugins"].map(
-			require.resolve,
-		),
+		...["./rules/best-practices", "./rules/errors", "./rules/style", "./rules/plugins"].map(require.resolve),
 	],
 };
