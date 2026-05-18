@@ -17,7 +17,6 @@ jobs:
         with:
           node-version: '20'
           cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org/'
       - name: Install dependencies
         run: pnpm install
       - name: Run tests
@@ -25,4 +24,4 @@ jobs:
       - name: Publish to npm
         run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.TOKEN_NPM }}
+          npm_config_//registry.npmjs.org/:_authToken: ${{ secrets.TOKEN_NPM }}
