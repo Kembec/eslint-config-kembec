@@ -1,4 +1,4 @@
-name: 'Publish in NPM'
+name: Publish in NPM
 
 on:
   push:
@@ -10,19 +10,20 @@ jobs:
     runs-on: ubuntu-latest
     environment: NPM
     steps:
-      - uses: actions/checkout@v4.1.2
-      - uses: pnpm/action-setup@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 9
       - name: Setup Node
-        uses: actions/setup-node@v4.0.2
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'pnpm'
-          registry-url: 'https://registry.npmjs.org/' 
+          registry-url: 'https://registry.npmjs.org/'
       - name: Install dependencies
-        run: |
-            pnpm install
-      - uses: JS-DevTools/npm-publish@v3.1.1
+        run: pnpm install
+      - name: Run tests
+        run: pnpm test
+      - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.TOKEN_NPM }}

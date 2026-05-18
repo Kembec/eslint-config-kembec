@@ -1,12 +1,10 @@
-module.exports = {
-	plugins: ["@typescript-eslint"],
+export default {
 	rules: {
 		"@typescript-eslint/member-ordering": [
 			"error",
 			{
 				default: [
 					"signature",
-
 					"private-decorated-field",
 					"private-instance-field",
 					"private-static-field",
@@ -18,11 +16,9 @@ module.exports = {
 					"public-decorated-field",
 					"public-instance-field",
 					"public-static-field",
-
 					"private-constructor",
 					"protected-constructor",
 					"public-constructor",
-
 					"private-decorated-method",
 					"private-instance-method",
 					"private-static-method",
@@ -37,24 +33,24 @@ module.exports = {
 				],
 			},
 		],
-		"@typescript-eslint/no-confusing-non-null-assertion": ["error"],
+		"@typescript-eslint/no-confusing-non-null-assertion": "error",
 		"@typescript-eslint/no-confusing-void-expression": ["error", { ignoreArrowShorthand: true }],
-		"@typescript-eslint/no-explicit-any": ["warn"],
-		"@typescript-eslint/no-extra-non-null-assertion": ["error"],
-		"@typescript-eslint/no-floating-promises": ["error"],
-		"@typescript-eslint/no-non-null-asserted-optional-chain": ["error"],
-		"@typescript-eslint/no-non-null-assertion": ["error"],
-		"@typescript-eslint/no-require-imports": ["error"],
-		"@typescript-eslint/no-unnecessary-boolean-literal-compare": ["error"],
-		"@typescript-eslint/no-unnecessary-condition": ["error"],
+		"@typescript-eslint/no-explicit-any": "warn",
+		"@typescript-eslint/no-extra-non-null-assertion": "error",
+		"@typescript-eslint/no-floating-promises": "error",
+		"@typescript-eslint/no-non-null-asserted-optional-chain": "error",
+		"@typescript-eslint/no-non-null-assertion": "error",
+		"@typescript-eslint/no-require-imports": "error",
+		"@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+		"@typescript-eslint/no-unnecessary-condition": "error",
 		"@typescript-eslint/no-unused-vars": "off",
-		"@typescript-eslint/no-useless-constructor": ["error"],
-		"@typescript-eslint/prefer-for-of": ["error"],
-		"@typescript-eslint/prefer-nullish-coalescing": ["error"],
-		"@typescript-eslint/prefer-readonly": ["error"],
+		"@typescript-eslint/no-useless-constructor": "error",
+		"@typescript-eslint/prefer-for-of": "error",
+		"@typescript-eslint/prefer-nullish-coalescing": "error",
+		"@typescript-eslint/prefer-readonly": "error",
 		"@typescript-eslint/promise-function-async": ["error", { checkArrowFunctions: false }],
-		"@typescript-eslint/require-await": ["warn"],
-		"@typescript-eslint/switch-exhaustiveness-check": ["error"],
+		"@typescript-eslint/require-await": "warn",
+		"@typescript-eslint/switch-exhaustiveness-check": "error",
 		"@typescript-eslint/explicit-member-accessibility": [
 			"error",
 			{
@@ -64,5 +60,6 @@ module.exports = {
 				},
 			},
 		],
+		"@typescript-eslint/explicit-module-boundary-types": "error",
 	},
 };

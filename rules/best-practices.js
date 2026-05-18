@@ -1,9 +1,10 @@
-module.exports = {
+export default {
 	rules: {
 		camelcase: ["error", { properties: "never" }],
-		eqeqeq: "error",
+		eqeqeq: ["error", "always", { null: "ignore" }],
 		"new-cap": ["error", { capIsNew: false }],
 		"no-array-constructor": "error",
+		"no-var": "error",
 		"no-console": ["error", { allow: ["error"] }],
 		"no-else-return": ["error", { allowElseIf: false }],
 		"no-extend-native": "error",

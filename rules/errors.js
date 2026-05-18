@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	rules: {
 		"array-callback-return": ["error", { checkForEach: true }],
 		"no-await-in-loop": "error",
@@ -6,9 +6,11 @@ module.exports = {
 		"no-constructor-return": "error",
 		"no-promise-executor-return": "error",
 		"no-self-compare": "error",
+		"no-shadow-restricted-names": ["error", { reportGlobalThis: true }],
 		"no-template-curly-in-string": "error",
 		"no-unmodified-loop-condition": "error",
 		"no-unreachable-loop": "error",
+		"no-unused-expressions": ["error", { ignoreDirectives: true }],
 		"no-unused-private-class-members": "error",
 		"no-use-before-define": [
 			"error",
