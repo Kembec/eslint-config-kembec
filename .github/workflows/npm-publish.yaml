@@ -22,6 +22,14 @@ jobs:
       - name: Run tests
         run: pnpm test
       - name: Publish to npm
-        run: npm publish --access public
+        run: |
+          PACKAGE_VERSION=$(node -e "process.stdout.write(require('./package.json').version)")
+          PUBLISHED_VERSION=$(npm view @kembec/eslint-config version 2>/dev/null || echo "0.0.0")
+          if [ "$PACKAGE_VERSION" = "$PUBLISHED_VERSION" ]; then
+            echo "Version $PACKAGE_VERSION already published, skipping."
+            exit 0
+          fi
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> ~/.npmrc
+          npm publish --access public
         env:
-          npm_config_//registry.npmjs.org/:_authToken: ${{ secrets.TOKEN_NPM }}
+          NPM_TOKEN: ${{ secrets.TOKEN_NPM }}
