@@ -32,6 +32,13 @@ describe("defineConfig — structure", () => {
 		expect(config.length).toBeGreaterThan(0);
 	});
 
+	test("vue preset returns non-empty array", async () => {
+		const { defineConfig } = await import("../index.js");
+		const config = defineConfig({ preset: "vue" });
+		expect(Array.isArray(config)).toBe(true);
+		expect(config.length).toBeGreaterThan(0);
+	});
+
 	test("invalid preset throws synchronously with package name in message", async () => {
 		const { defineConfig } = await import("../index.js");
 		expect(() => defineConfig({ preset: "invalid" })).toThrow("@kembec/eslint-config");
@@ -39,7 +46,7 @@ describe("defineConfig — structure", () => {
 
 	test("all presets include vitest overlay", async () => {
 		const { defineConfig } = await import("../index.js");
-		for (const preset of ["js", "ts", "react"]) {
+		for (const preset of ["js", "ts", "react", "vue"]) {
 			const config = defineConfig({ preset });
 			const hasVitest = config.some((c) => c.plugins && "vitest" in c.plugins);
 			expect(hasVitest).toBe(true);
@@ -60,6 +67,20 @@ describe("defineConfig — structure", () => {
 		const hasReactHooks = config.some((c) => c.plugins && "react-hooks" in c.plugins);
 		expect(hasReact).toBe(true);
 		expect(hasReactHooks).toBe(true);
+	});
+
+	test("vue preset includes vue plugin", async () => {
+		const { defineConfig } = await import("../index.js");
+		const config = defineConfig({ preset: "vue" });
+		const hasVue = config.some((c) => c.plugins && "vue" in c.plugins);
+		expect(hasVue).toBe(true);
+	});
+
+	test("vue preset includes @typescript-eslint plugin", async () => {
+		const { defineConfig } = await import("../index.js");
+		const config = defineConfig({ preset: "vue" });
+		const hasTsPlugin = config.some((c) => c.plugins && "@typescript-eslint" in c.plugins);
+		expect(hasTsPlugin).toBe(true);
 	});
 
 	test("js preset includes import-x plugin", async () => {

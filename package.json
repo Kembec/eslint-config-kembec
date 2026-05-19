@@ -1,6 +1,6 @@
 {
   "name": "@kembec/eslint-config",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "ESLint flat config presets for JS/TS/React projects",
   "main": "index.js",
   "exports": {
@@ -23,6 +23,7 @@
     "eslint",
     "typescript",
     "react",
+    "vue",
     "vitest",
     "flat-config",
     "kembec"
@@ -35,6 +36,7 @@
   "homepage": "https://github.com/Kembec/eslint-config-kembec#readme",
   "dependencies": {
     "@eslint/js": "^9.27.0",
+    "@vitest/eslint-plugin": "^1.6.17",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import-x": "^4.16.1",
     "eslint-plugin-prettier": "^5.5.4",
@@ -42,10 +44,11 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-simple-import-sort": "^12.0.0",
     "eslint-plugin-unused-imports": "^4.2.0",
-    "@vitest/eslint-plugin": "^1.6.17",
+    "eslint-plugin-vue": "^10.9.1",
     "globals": "^16.4.0",
     "prettier": "^3.6.2",
-    "typescript-eslint": "^8.34.0"
+    "typescript-eslint": "^8.34.0",
+    "vue-eslint-parser": "^10.4.0"
   },
   "devDependencies": {
     "eslint": "^9.27.0",
