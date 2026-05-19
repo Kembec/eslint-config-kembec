@@ -67,6 +67,6 @@ jobs:
             echo "Version $PACKAGE_VERSION already published, skipping."
             exit 0
           fi
-          pnpm publish --access public --no-git-checks --provenance
+          pnpm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.TOKEN_NPM }}
