@@ -8,7 +8,7 @@ import tseslint from "typescript-eslint";
 import bestPractices from "../rules/best-practices.js";
 import errors from "../rules/errors.js";
 import { importXRules, pluginInstances, pluginRules } from "../rules/plugins.js";
-import style from "../rules/style.js";
+import style, { stylisticPluginInstance } from "../rules/style.js";
 import typescriptRules from "../rules/typescript.js";
 
 export function buildVuePreset(tsconfigPath = "./tsconfig.json") {
@@ -27,10 +27,12 @@ export function buildVuePreset(tsconfigPath = "./tsconfig.json") {
 				},
 				parserOptions: {
 					project: tsconfigPath,
+					extraFileExtensions: [".vue"],
 				},
 			},
 			plugins: {
 				...pluginInstances,
+				...stylisticPluginInstance,
 				"import-x": importXPlugin,
 			},
 			rules: {
@@ -42,14 +44,19 @@ export function buildVuePreset(tsconfigPath = "./tsconfig.json") {
 				...importXRules,
 			},
 		},
-		...pluginVue.configs["flat/essential"],
+		...pluginVue.configs["flat/strongly-recommended"],
 		{
 			files: ["**/*.vue"],
+			plugins: {
+				...stylisticPluginInstance,
+			},
 			languageOptions: {
 				parser: vueParser,
 				parserOptions: {
 					parser: tseslint.parser,
 					sourceType: "module",
+					project: tsconfigPath,
+					extraFileExtensions: [".vue"],
 				},
 			},
 		},
