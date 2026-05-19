@@ -1,9 +1,9 @@
 import prettierConfig from "eslint-config-prettier";
 import importXPlugin from "eslint-plugin-import-x";
 import pluginVue from "eslint-plugin-vue";
-import vueParser from "vue-eslint-parser";
 import globals from "globals";
 import tseslint from "typescript-eslint";
+import vueParser from "vue-eslint-parser";
 
 import bestPractices from "../rules/best-practices.js";
 import errors from "../rules/errors.js";
@@ -59,7 +59,7 @@ export function buildVuePreset(tsconfigPath = "./tsconfig.json") {
 					extraFileExtensions: [".vue"],
 				},
 			},
-		},
+		}
 	);
 }
 

@@ -1,8 +1,8 @@
 import { buildJsPreset } from "./presets/js.js";
 import { buildReactPreset } from "./presets/react.js";
 import { buildTsPreset } from "./presets/ts.js";
-import { buildVuePreset } from "./presets/vue.js";
 import vitestPreset from "./presets/vitest.js";
+import { buildVuePreset } from "./presets/vue.js";
 
 const PRESETS = ["js", "ts", "react", "vue"];
 
