@@ -8,7 +8,7 @@ import tseslint from "typescript-eslint";
 import bestPractices from "../rules/best-practices.js";
 import errors from "../rules/errors.js";
 import { importXRules, pluginInstances, pluginRules } from "../rules/plugins.js";
-import style from "../rules/style.js";
+import style, { stylisticPluginInstance } from "../rules/style.js";
 import typescriptRules from "../rules/typescript.js";
 
 export function buildReactPreset(tsconfigPath = "./tsconfig.json") {
@@ -28,6 +28,7 @@ export function buildReactPreset(tsconfigPath = "./tsconfig.json") {
 		},
 		plugins: {
 			...pluginInstances,
+			...stylisticPluginInstance,
 			"import-x": importXPlugin,
 			react: reactPlugin,
 			"react-hooks": reactHooksPlugin,

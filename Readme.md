@@ -42,6 +42,16 @@ import { defineConfig } from "@kembec/eslint-config";
 export default defineConfig({ preset: "react" });
 ```
 
+**Vue + TypeScript:**
+
+```js
+import { defineConfig } from "@kembec/eslint-config";
+
+export default defineConfig({ preset: "vue" });
+```
+
+Includes TypeScript type-aware rules + `eslint-plugin-vue` essential rules. Parser for `.vue` files is configured automatically.
+
 **Custom tsconfig path:**
 
 ```js
@@ -56,8 +66,8 @@ All presets include Vitest rules automatically.
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `preset` | `"ts"` | `"js"` \| `"ts"` \| `"react"` |
-| `tsconfigPath` | `"./tsconfig.json"` | Path to tsconfig (ts/react only) |
+| `preset` | `"ts"` | `"js"` \| `"ts"` \| `"react"` \| `"vue"` |
+| `tsconfigPath` | `"./tsconfig.json"` | Path to tsconfig (ts/react/vue only) |
 
 ## Includes
 
@@ -67,6 +77,7 @@ All presets include Vitest rules automatically.
 - `eslint-plugin-unused-imports` — remove unused imports
 - `eslint-plugin-prettier` — Prettier as ESLint rule
 - `eslint-plugin-react` + `eslint-plugin-react-hooks` (react preset only)
+- `eslint-plugin-vue` + `vue-eslint-parser` (vue preset only)
 - `@vitest/eslint-plugin` — Vitest test rules
 
 ## License

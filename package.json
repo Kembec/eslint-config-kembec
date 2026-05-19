@@ -1,12 +1,12 @@
 {
   "name": "@kembec/eslint-config",
   "version": "2.1.0",
-  "description": "ESLint flat config presets for JS/TS/React projects",
+  "description": "Opinionated ESLint flat config for TypeScript, React, Vue & Vitest — strict type-aware rules, auto import sorting and Prettier",
   "main": "index.js",
   "exports": {
     ".": "./index.js"
   },
-  "packageManager": "pnpm@9.15.0",
+  "packageManager": "pnpm@11.1.3",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -21,11 +21,19 @@
   },
   "keywords": [
     "eslint",
+    "eslint-config",
+    "eslint-flat-config",
+    "opinionated",
+    "strict",
+    "shareable-config",
     "typescript",
     "react",
     "vue",
     "vitest",
-    "flat-config",
+    "prettier",
+    "import-sort",
+    "javascript",
+    "node",
     "kembec"
   ],
   "author": "Kembec.com",
@@ -36,6 +44,7 @@
   "homepage": "https://github.com/Kembec/eslint-config-kembec#readme",
   "dependencies": {
     "@eslint/js": "^9.27.0",
+    "@stylistic/eslint-plugin": "^5.10.0",
     "@vitest/eslint-plugin": "^1.6.17",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import-x": "^4.16.1",
@@ -63,6 +72,9 @@
     "typescript": {
       "optional": true
     }
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["unrs-resolver"]
   },
   "publishConfig": {
     "access": "public"
